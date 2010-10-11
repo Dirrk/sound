@@ -1,0 +1,75 @@
+*-------------------------------------------------------------------------------
+* Wolfson Microelectronics device configuration file
+* Created by WISCE utility at 04:08:39 on 2010-10-11
+*
+* Device type: WM8994
+*-------------------------------------------------------------------------------
+
+*-------------------------------------------------------------------------------
+* Register operations have the following format:
+*
+*      <register> <value> <access_type> <action> [<dev_addr>] [<mask>]
+*
+* where:
+*      <register>      is the register index
+*      <value>         is the data value
+*      <access_type>   is one of:
+*          AC97_16_bit_data
+*          3wire_9_bit_data
+*          2wire_9_bit_data
+*      <action>        is one of
+*          Write         - write the given value
+*          Read          - documents the value that was read
+*          RModW         - read/modify/write
+*                          (newval = (currval & ~<mask>) | <value>)
+*      <dev_addr>      is the 2wire device address
+*      <mask>          is the mask for the RModW operation
+*
+* for example:
+*   R12  0x1234  AC97_16_bit_data Write
+*     - this would write the hex value 0x1234 to register 12 (decimal)
+*       using AC97
+*
+*   R36  0x1F5   2wire_9_bit_data Write 0x34
+*     - this would write the hexadecimal value 0x1F5 to register
+*       36 (decimal) on the 2-wire device at address 0x34 (hex)
+*
+*   0xC  4660    AC97_16_bit_data Write
+*   0x24 501     2wire_9_bit_data Write 0x34
+*     - these are the same two operations using hexadecimal registers
+*       and decimal values
+*
+* Lines beginning with// are comments and are ignored when processing
+* the file.
+*
+* The register index can be written either in decimal format, prefixed by 'R'
+* or in hexadecimal format, prefixed by '0x'.
+*
+* For 9-bit 2- and 3-wire operations, <value> is the actual 9 bit register
+* contents, NOT the 16 bit data word.
+*
+* Entries in a line can be separated by spaces or tabs. The amount of
+* space between each entry does not matter but entries must be arranged
+* in the correct order from left to right. A file can be created in a text
+* editor (e.g. Notepad), or created in Excel and saved as .txt format
+* (tab separated).
+*
+*-------------------------------------------------------------------------------
+
+* ----- ------ -------------------- ------- --------- ------------------------------
+*  REG   DATA         ACCESS        READ OR  DEVICE
+* INDEX  VALUE         TYPE          WRITE   ADDRESS  COMMENT (for information only)
+* ----- ------ -------------------- ------- --------- ------------------------------
+  0x480 0x6319 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Gains (1)(480H): 6319  AIF1DAC1_EQ_B1_GAIN=0_1100, AIF1DAC1_EQ_B2_GAIN=0_1100, AIF1DAC1_EQ_B3_GAIN=0_1100, AIF1DAC1_EQ_ENA=1
+  0x485 0x1FCB SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 2 A(485H): 1FCB  AIF1DAC1_EQ_B2_A=0001_1111_1100_1011
+  0x486 0xF034 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 2 B(486H): F034  AIF1DAC1_EQ_B2_B=1111_0000_0011_0100
+  0x487 0x040D SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 2 C(487H): 040D  AIF1DAC1_EQ_B2_C=0000_0100_0000_1101
+  0x488 0x00CE SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 2 PG(488H): 00CE  AIF1DAC1_EQ_B2_PG=0000_0000_1100_1110
+  0x489 0x1DF3 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 3 A(489H): 1DF3  AIF1DAC1_EQ_B3_A=0001_1101_1111_0011
+  0x48A 0xF1D4 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 3 B(48AH): F1D4  AIF1DAC1_EQ_B3_B=1111_0001_1101_0100
+  0x48B 0x040B SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 3 C(48BH): 040B  AIF1DAC1_EQ_B3_C=0000_0100_0000_1011
+  0x48C 0x073D SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 3 PG(48CH): 073D  AIF1DAC1_EQ_B3_PG=0000_0111_0011_1101
+  0x48D 0x19B5 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 A(48DH): 19B5  AIF1DAC1_EQ_B4_A=0001_1001_1011_0101
+  0x48E 0xF4B6 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 B(48EH): F4B6  AIF1DAC1_EQ_B4_B=1111_0100_1011_0110
+  0x48F 0x040A SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 C(48FH): 040A  AIF1DAC1_EQ_B4_C=0000_0100_0000_1010
+  0x490 0x12A8 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 PG(490H): 12A8  AIF1DAC1_EQ_B4_PG=0001_0010_1010_1000

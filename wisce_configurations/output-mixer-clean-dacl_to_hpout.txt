@@ -1,0 +1,64 @@
+*-------------------------------------------------------------------------------
+* Wolfson Microelectronics device configuration file
+* Created by WISCE utility at 02:20:02 on 2010-10-09
+*
+* Device type: WM8994
+*-------------------------------------------------------------------------------
+
+*-------------------------------------------------------------------------------
+* Register operations have the following format:
+*
+*      <register> <value> <access_type> <action> [<dev_addr>] [<mask>]
+*
+* where:
+*      <register>      is the register index
+*      <value>         is the data value
+*      <access_type>   is one of:
+*          AC97_16_bit_data
+*          3wire_9_bit_data
+*          2wire_9_bit_data
+*      <action>        is one of
+*          Write         - write the given value
+*          Read          - documents the value that was read
+*          RModW         - read/modify/write
+*                          (newval = (currval & ~<mask>) | <value>)
+*      <dev_addr>      is the 2wire device address
+*      <mask>          is the mask for the RModW operation
+*
+* for example:
+*   R12  0x1234  AC97_16_bit_data Write
+*     - this would write the hex value 0x1234 to register 12 (decimal)
+*       using AC97
+*
+*   R36  0x1F5   2wire_9_bit_data Write 0x34
+*     - this would write the hexadecimal value 0x1F5 to register
+*       36 (decimal) on the 2-wire device at address 0x34 (hex)
+*
+*   0xC  4660    AC97_16_bit_data Write
+*   0x24 501     2wire_9_bit_data Write 0x34
+*     - these are the same two operations using hexadecimal registers
+*       and decimal values
+*
+* Lines beginning with// are comments and are ignored when processing
+* the file.
+*
+* The register index can be written either in decimal format, prefixed by 'R'
+* or in hexadecimal format, prefixed by '0x'.
+*
+* For 9-bit 2- and 3-wire operations, <value> is the actual 9 bit register
+* contents, NOT the 16 bit data word.
+*
+* Entries in a line can be separated by spaces or tabs. The amount of
+* space between each entry does not matter but entries must be arranged
+* in the correct order from left to right. A file can be created in a text
+* editor (e.g. Notepad), or created in Excel and saved as .txt format
+* (tab separated).
+*
+*-------------------------------------------------------------------------------
+
+* ----- ------ -------------------- ------- --------- ------------------------------
+*  REG   DATA         ACCESS        READ OR  DEVICE
+* INDEX  VALUE         TYPE          WRITE   ADDRESS  COMMENT (for information only)
+* ----- ------ -------------------- ------- --------- ------------------------------
+   0x2D 0x0100 SMbus_16inx_16dat     Write  0x34      * Output Mixer (1)(2DH):   0100  DAC1L_TO_HPOUT1L=1, MIXINR_TO_MIXOUTL=0, MIXINL_TO_MIXOUTL=0, IN2RN_TO_MIXOUTL=0, IN2LN_TO_MIXOUTL=0, IN1R_TO_MIXOUTL=0, IN1L_TO_MIXOUTL=0, IN2LP_TO_MIXOUTL=0, DAC1L_TO_MIXOUTL=0
+   0x2E 0x0100 SMbus_16inx_16dat     Write  0x34      * Output Mixer (2)(2EH):   0100  DAC1R_TO_HPOUT1R=1, MIXINL_TO_MIXOUTR=0, MIXINR_TO_MIXOUTR=0, IN2LN_TO_MIXOUTR=0, IN2RN_TO_MIXOUTR=0, IN1L_TO_MIXOUTR=0, IN1R_TO_MIXOUTR=0, IN2RP_TO_MIXOUTR=0, DAC1R_TO_MIXOUTR=0
