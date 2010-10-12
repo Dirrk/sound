@@ -1,6 +1,6 @@
 *-------------------------------------------------------------------------------
 * Wolfson Microelectronics device configuration file
-* Created by WISCE utility at 18:30:55 on 2010-10-12
+* Created by WISCE utility at 18:32:45 on 2010-10-12
 *
 * Device type: WM8994
 *-------------------------------------------------------------------------------
@@ -61,11 +61,3 @@
 * INDEX  VALUE         TYPE          WRITE   ADDRESS  COMMENT (for information only)
 * ----- ------ -------------------- ------- --------- ------------------------------
   0x480 0x6319 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Gains (1)(480H): 6319  AIF1DAC1_EQ_B1_GAIN=0_1100, AIF1DAC1_EQ_B2_GAIN=0_1100, AIF1DAC1_EQ_B3_GAIN=0_1100, AIF1DAC1_EQ_ENA=1
-  0x481 0x0300 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Gains (2)(481H): 0300  AIF1DAC1_EQ_B4_GAIN=0_0000, AIF1DAC1_EQ_B5_GAIN=0_1100
-  0x48D 0xE365 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 A(48DH): E365  AIF1DAC1_EQ_B4_A=1110_0011_0110_0101
-  0x48E 0xF222 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 B(48EH): F222  AIF1DAC1_EQ_B4_B=1111_0010_0010_0010
-  0x48F 0x040A SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 C(48FH): 040A  AIF1DAC1_EQ_B4_C=0000_0100_0000_1010
-  0x490 0x0872 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 4 PG(490H): 0872  AIF1DAC1_EQ_B4_PG=0000_1000_0111_0010
-  0x491 0xF753 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 5 A(491H): F753  AIF1DAC1_EQ_B5_A=1111_0111_0101_0011
-  0x492 0x0400 SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 5 B(492H): 0400  AIF1DAC1_EQ_B5_B=0000_0100_0000_0000
-  0x493 0x1D4C SMbus_16inx_16dat     Write  0x34      * AIF1 DAC1 EQ Band 5 PG(493H): 1D4C  AIF1DAC1_EQ_B5_PG=0001_1101_0100_1100
